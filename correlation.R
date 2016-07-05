@@ -21,18 +21,18 @@ data 		<- mvrnorm(n=N, mu=averages, Sigma=var_matrix)	# data
 ##set starting values
 ################
 
-online_meanx1	<- 0
-online_meanx2	<- 0
+online_meanx1	<- data[1,1]
+online_meanx2	<- data[1,2]
 online_SSx1		<- 0
 online_SSx2		<- 0
 online_SCP		<- 0							
-n			<- 0
+n			<- 1
 
 ################
 ##run through the data 
 ################
 
-for(i in 1:nrow(data))
+for(i in 2:nrow(data))
 {
 	n			<- n+1
 	dx1			<- data[i,1]-online_meanx1
