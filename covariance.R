@@ -15,7 +15,7 @@ library(MASS)
 averages 	<- rep(0,2)							# set a mean for each of the variables 
 var_matrix 	<- matrix(.5, nrow=2, ncol=2) + diag(2)*.3 	# specify the variance covariance matrix  
 N		<- 1000 							# sample size
-data 		<- mvrnorm(n=n, mu=averages, Sigma=var_matrix)	# data
+data 		<- mvrnorm(n=N, mu=averages, Sigma=var_matrix)	# data
  
 ################
 ##set starting values
