@@ -2,20 +2,19 @@
 ##linear regression 
 #################
 
-## We require 2 correlated variables, 
-## and an easy way of generating 2 variables that are correlated is using the 
-## mvrnorm (multivariate normal distribution) function from the MASS package
+## We require variables, that might be correlated. 
+## We use mvrnorm (multivariate normal distribution) function from the MASS package
 
 library(MASS)
 
 ################
 ##generate data
 ################
-n_pred	<- 4									# 2 predictors and an intercept
+n_pred	<- 4									# number of predictors (without intercept)
 averages 	<- rep(0,n_pred)							# set a mean for each of the variables 
-var_matrix 	<- matrix(0.0, nrow=n_pred, ncol=n_pred) + diag(n_pred)*.9 	# specify the variance covariance matrix  
+var_matrix 	<- matrix(0.2, nrow=n_pred, ncol=n_pred) + diag(n_pred)*.3 	# specify the variance covariance matrix  
 N		<- 3000 								# sample size
-Xvar 		<- cbind(1,mvrnorm(n=N, mu=averages, Sigma=var_matrix))# data consisting of 3 independent variables
+Xvar 		<- cbind(1,mvrnorm(n=N, mu=averages, Sigma=var_matrix))# data consisting of independent variables including 1's for intercept
 Beta		<- runif(n_pred+1, -5,5)					# regression coefficients 
 Yvar		<- rep(NA, N)
 for(i in 1:N)
