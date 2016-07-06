@@ -13,15 +13,15 @@ data		<- rnorm(N, average, std )
 ###################
 ##set starting values
 ###################
-online_mean <- 0
+online_mean <- data[1]
 online_SS	<- 0
-n		<- 0
+n		<- 1
 
 ###################
 ##run through the data:
 ###################
 
-for(i in 1:length(data))
+for(i in 2:length(data))
 {
 	n		<- n+1
 	d		<- data[i]-online_mean
