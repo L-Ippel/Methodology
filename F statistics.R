@@ -58,7 +58,7 @@ for(i in 1:nrow(data))
  
 	if(n>K & K>1)	#these conditions prevent you to divide by zero at a certain point	
 	{	
-		F	<- ((SSt-SSw)/K-1)/(SSw/(n-K))		
+		F	<- ((SSt-SSw)/(K-1))/(SSw/(n-K))		
 	}
 	print(paste("F=",as.numeric(F), "df1 =",(K-1), "df2 =",(n-K)))
 }
