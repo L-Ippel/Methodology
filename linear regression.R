@@ -16,11 +16,8 @@ var_matrix 	<- matrix(0.2, nrow=n_pred, ncol=n_pred) + diag(n_pred)*.3 	# specif
 N		<- 3000 								# sample size
 Xvar 		<- cbind(1,mvrnorm(n=N, mu=averages, Sigma=var_matrix))# data consisting of independent variables including 1's for intercept
 Beta		<- runif(n_pred+1, -5,5)					# regression coefficients 
-Yvar		<- rep(NA, N)
-for(i in 1:N)
-{
-	Yvar[i]	<- sum(Beta*Xvar[i,])+rnorm(1,0,2)			# the dependent variable is predicted from independent variables plus some random noise
-}
+Yvar		<- rowSums(Beta*Xvar+rnorm(N,0,2))			# the dependent variable is predicted from independent variables plus some random noise
+
 data		<- cbind(Xvar, Yvar)
  
 ################
