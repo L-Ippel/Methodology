@@ -7,11 +7,16 @@ The files that include a statistic as file name are small working examples of th
 
 The file named "Streaming analysis" includes the functions which can be used to estimate the statistics online. The first argument of the functions is always the new data point (and in case of a statistic that requires more variables, then the first two arguments are the new input). The next argument is theta. Theta is a list of the current state of the sufficient statistics. We implemented the functions in such a way that if theta is missing, or when theta is an empty object (NULL), the function creates a list including the required sufficient statistics.  The output of the functions is theta, which is a list of updated sufficient statistics including the parameter of interest. So in a for-loop, one could use the functions as follows:
 
-res   <- NULL
+res   <- NULL 
+
 data  <-rnorm(1000,mean=5,sd=2)
+
 for(i in 1:nrow(data))
+
 {
+
       res <-mean_online(input=data[i], theta=res)
+
 }
 
 Below we list all the functions in Streaming analysis.R file including the required arguments, 
