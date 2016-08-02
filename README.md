@@ -21,7 +21,6 @@ for(i in 1:nrow(data))
 
 Below we list all the functions in Streaming analysis.R file including the required arguments, 
 note that argument theta always has default values, such that you dont have to specify theta yourself. 
-The parameter of interest is included in theta in the function,   
 
 - mean_online(input, theta=list("n"=0,"Mean"=0))
 
