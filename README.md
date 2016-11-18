@@ -9,7 +9,7 @@ The file named "Streaming analysis" includes the functions which can be used to 
 
     res   <- NULL
     data  <- rnorm(1000, mean=5, sd=2)
-    for(i in 1:nrow(data))
+    for(i in 1:NROW(data))
     {
         res <- mean_online(input=data[i], theta=res)
     }
