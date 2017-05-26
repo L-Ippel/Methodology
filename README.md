@@ -11,7 +11,7 @@ res   <- NULL
 
 data  <-rnorm(1000,mean=5,sd=2)
 
-for(i in 1:nrow(data))
+for(i in 1:length(data))
 
 {
 
